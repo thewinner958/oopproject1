@@ -19,7 +19,8 @@ public:
 
     ~Table();
 
-    void openFile(char * pathOfFile = "");
+    void openFile();
+    void closeFile();
 };
 
 Table::Table(char * pathOfFile) {
@@ -30,8 +31,15 @@ Table::~Table() {
     delete[] this ->_pathOfFile;
 }
 
-void Table::openFile(char * pathOfFile) {
+void Table::openFile() {
     if (!_inputFile.is_open()) _inputFile.open(_pathOfFile);
+}
+
+void Table::closeFile() {
+    if (_inputFile.is_open())
+    {
+        _inputFile.close();
+    }
 }
 
 #endif //OOPPROJECT1_TABLE_H

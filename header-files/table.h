@@ -8,15 +8,27 @@ using namespace std;
 
 #ifndef OOPPROJECT1_TABLE_H
 #define OOPPROJECT1_TABLE_H
-
+/**
+ * @brief This class is the main one that i am gonna use
+ * 
+ */
 class Table {
 private:
+    
     char * _pathOfFile; //a parameter for the path of the file
     fstream _inputFile;
     ofstream _outputFile;
 public:
+    /**
+     * @brief Construct a new Table object
+     * 
+     * @param pathOfFile 
+     */
     Table(char * pathOfFile); //Constructor with the path of file parameter set by the user
-
+    /**
+     * @brief Destroy the Table object
+     * 
+     */
     ~Table();
 
     void openFile();

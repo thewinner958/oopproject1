@@ -14,8 +14,7 @@ using namespace std;
  */
 class Table {
 private:
-    
-    char * _pathOfFile; //a parameter for the path of the file
+    char * _pathOfFile;
     fstream _inputFile;
     ofstream _outputFile;
 public:
@@ -24,7 +23,7 @@ public:
      * 
      * @param pathOfFile 
      */
-    Table(char * pathOfFile); //Constructor with the path of file parameter set by the user
+    Table(char * pathOfFile);
     /**
      * @brief Destroy the Table object
      * 

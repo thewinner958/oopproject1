@@ -16,7 +16,9 @@ class Table {
 private:
     char * _pathOfFile;
     fstream _file;
+    char * _columns;
 public:
+    Table();
     /**
      * @brief Construct a new Table object
      * 
@@ -33,6 +35,10 @@ public:
     void closeFile();
 };
 
+Table::Table() {
+    _pathOfFile = nullptr;
+}
+
 Table::Table(char * pathOfFile) {
     _pathOfFile = strcpy(new char[strlen(pathOfFile) + 1], pathOfFile);
 }
@@ -42,7 +48,9 @@ Table::~Table() {
 }
 
 void Table::openFile() {
+    if (_pathOfFile == nullptr) cout << "You have not specified a path of a file" << endl;
     if (!_file.is_open()) _file.open(_pathOfFile);
+    else cout << "File is already in use" << endl;
 }
 
 void Table::closeFile() {
@@ -50,6 +58,7 @@ void Table::closeFile() {
     {
         _file.close();
     }
+    else cout << "File is alredy not being used" << endl;
 }
 
 #endif //OOPPROJECT1_TABLE_H

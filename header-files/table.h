@@ -15,8 +15,7 @@ using namespace std;
 class Table {
 private:
     char * _pathOfFile;
-    fstream _inputFile;
-    ofstream _outputFile;
+    fstream _file;
 public:
     /**
      * @brief Construct a new Table object
@@ -43,13 +42,13 @@ Table::~Table() {
 }
 
 void Table::openFile() {
-    if (!_inputFile.is_open()) _inputFile.open(_pathOfFile);
+    if (!_file.is_open()) _file.open(_pathOfFile);
 }
 
 void Table::closeFile() {
-    if (_inputFile.is_open())
+    if (_file.is_open())
     {
-        _inputFile.close();
+        _file.close();
     }
 }
 

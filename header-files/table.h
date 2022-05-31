@@ -18,9 +18,13 @@ private:
     fstream _file;
     char * _columns;
 public:
+    /**
+     * @brief Construct a default Table object
+     * 
+     */
     Table();
     /**
-     * @brief Construct a new Table object
+     * @brief Construct a Table object
      * 
      * @param pathOfFile 
      */

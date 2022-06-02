@@ -3,20 +3,21 @@
 #include <cstring>
 #include <exception>
 
+#include "string.h"
+
 using namespace std;
 
 
 #ifndef OOPPROJECT1_TABLE_H
 #define OOPPROJECT1_TABLE_H
 /**
- * @brief This class is the main one that i am gonna use
+ * @brief This is the base class of the whole program
  * 
  */
 class Table {
 private:
-    char * _pathOfFile;
+    String _pathOfFile;
     fstream _file;
-    char * _columns;
 public:
     /**
      * @brief Construct a default Table object
@@ -40,20 +41,20 @@ public:
 };
 
 Table::Table() {
-    _pathOfFile = nullptr;
+    _pathOfFile.setString(nullptr);
 }
 
 Table::Table(char * pathOfFile) {
-    _pathOfFile = strcpy(new char[strlen(pathOfFile) + 1], pathOfFile);
+    _pathOfFile.setString(pathOfFile);
 }
 
 Table::~Table() {
-    delete[] this ->_pathOfFile;
+    
 }
 
 void Table::openFile() {
-    if (_pathOfFile == nullptr) cout << "You have not specified a path of a file" << endl;
-    if (!_file.is_open()) _file.open(_pathOfFile);
+    if (_pathOfFile.getString() == nullptr) cout << "You have not specified a path of a file" << endl;
+    if (!_file.is_open()) _file.open(_pathOfFile.getString());
     else cout << "File is already in use" << endl;
 }
 

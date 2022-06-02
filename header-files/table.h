@@ -15,9 +15,10 @@ using namespace std;
  * 
  */
 class Table {
-private:
+protected:
     String _pathOfFile;
     fstream _file;
+    String _table;
 public:
     /**
      * @brief Construct a default Table object
@@ -36,6 +37,8 @@ public:
      */
     ~Table();
 
+    String getTable() const;
+
     void openFile();
     void closeFile();
 };
@@ -46,10 +49,15 @@ Table::Table() {
 
 Table::Table(char * pathOfFile) {
     _pathOfFile.setString(pathOfFile);
+    char *temp;
+    openFile();
+    _file >> temp;
+    _table.setString(temp);
+    delete temp;
 }
 
 Table::~Table() {
-    
+    closeFile();
 }
 
 void Table::openFile() {
@@ -64,6 +72,10 @@ void Table::closeFile() {
         _file.close();
     }
     else cout << "File is alredy not being used" << endl;
+}
+
+String Table::getTable() const {
+    return _table;
 }
 
 #endif //OOPPROJECT1_TABLE_H

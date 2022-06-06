@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun  6 17:03:47 2022
+# Make data base, printed on Mon Jun  6 17:05:22 2022
 
 # Variables
 
@@ -109,7 +109,7 @@ SDKMAN_PLATFORM = linuxx64
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-fec64e91-b928-4430-ac0b-64bf643da864.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-98075cf6-bf6b-47f8-8677-4a1178edaae6.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -583,6 +583,6 @@ rebuild_cache:
 # strcache performance: lookups = 168 / hit rate = 67%
 # hash-table stats:
 # Load=55/8192=1%, Rehash=0, Collisions=3/168=2%
-# Finished Make data base on Mon Jun  6 17:03:47 2022
+# Finished Make data base on Mon Jun  6 17:05:22 2022
 
  

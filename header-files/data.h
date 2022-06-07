@@ -14,8 +14,17 @@ using namespace std;
 
 class Data : public Table {
 private:
-    
+    Table* table;
+
+public:
+    Data();
+    Data(char* pathOfFile);
+    ~Data();
 };
+
+inline Data::Data() : Table() {
+    
+}
 
 
 #endif

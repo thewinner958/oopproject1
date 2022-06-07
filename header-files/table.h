@@ -37,10 +37,12 @@ public:
      */
     ~Table();
 
-    String getTable() const;
-
+    char* getTable() const;
+    int getLineCount() const;
     void openFile();
     void closeFile();
+
+    
 };
 
 inline Table::Table() {
@@ -74,8 +76,20 @@ inline void Table::closeFile() {
     else cout << "File is alredy not being used" << endl;
 }
 
-inline String Table::getTable() const {
-    return _table;
+inline char* Table::getTable() const {
+    return _table.getString();
+}
+
+inline int Table::getLineCount() const{
+    int count = 0;
+    char* temp = _table.getString();
+    for (int i = 0; i < sizeof(temp); i++) {
+        if (temp[i] == '\n') {
+            count++;
+        }
+    }
+    delete temp;
+    return count;
 }
 
 class Data;

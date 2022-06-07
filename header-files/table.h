@@ -43,11 +43,11 @@ public:
     void closeFile();
 };
 
-Table::Table() {
+inline Table::Table() {
     _pathOfFile.setString(nullptr);
 }
 
-Table::Table(char * pathOfFile) {
+inline Table::Table(char * pathOfFile) {
     _pathOfFile.setString(pathOfFile);
     char *temp;
     openFile();
@@ -56,17 +56,17 @@ Table::Table(char * pathOfFile) {
     delete temp;
 }
 
-Table::~Table() {
+inline Table::~Table() {
     closeFile();
 }
 
-void Table::openFile() {
+inline void Table::openFile() {
     if (_pathOfFile.getString() == nullptr) cout << "You have not specified a path of a file" << endl;
     if (!_file.is_open()) _file.open(_pathOfFile.getString());
     else cout << "File is already in use" << endl;
 }
 
-void Table::closeFile() {
+inline void Table::closeFile() {
     if (_file.is_open())
     {
         _file.close();
@@ -74,7 +74,7 @@ void Table::closeFile() {
     else cout << "File is alredy not being used" << endl;
 }
 
-String Table::getTable() const {
+inline String Table::getTable() const {
     return _table;
 }
 

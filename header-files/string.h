@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 
+#pragma once
+
 class String {
 public:
     String();
@@ -16,23 +18,23 @@ private:
 
 };
 
-String::String() {
+inline String::String() {
     mString = nullptr;
 }
 
-String::String(char *string) {
+inline String::String(char *string) {
     mString = strcpy(new char[strlen(string) + 1], string);
 }
 
-String::~String() {
+inline String::~String() {
     delete[] this->mString;
 }
 
-char * String::getString() const {
+inline char * String::getString() const {
     return mString;
 }
 
-void String::setString(char *string) {
+inline void String::setString(char *string) {
     if (mString == string) return;
     
     mString = strcpy(new char[strlen(string) + 1], string);

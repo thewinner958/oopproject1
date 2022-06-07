@@ -2,7 +2,7 @@
 #include <fstream>
 #include <cstring>
 #include <exception>
-
+ 
 #include "string.h"
 
 using namespace std;
@@ -77,5 +77,7 @@ inline void Table::closeFile() {
 inline String Table::getTable() const {
     return _table;
 }
+
+class Data;
 
 #endif //OOPPROJECT1_TABLE_H

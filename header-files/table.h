@@ -10,6 +10,9 @@ using namespace std;
 
 #ifndef OOPPROJECT1_TABLE_H
 #define OOPPROJECT1_TABLE_H
+
+
+
 /**
  * @brief This is the base class of the whole program
  * 
@@ -35,6 +38,7 @@ public:
      * @brief Destroy the Table object
      * 
      */
+     Table(const Table& other);
     ~Table();
 
     char* getTable() const;
@@ -90,6 +94,11 @@ inline int Table::getLineCount() const{
     }
     delete temp;
     return count;
+}
+
+Table::Table(const Table &other) {
+    _pathOfFile = other._pathOfFile;
+    _table = other._table;
 }
 
 class Data;

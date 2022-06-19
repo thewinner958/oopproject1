@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include <cstring>
 #include <exception>
@@ -14,16 +15,22 @@ using namespace std;
 
 class Data : public Table {
 private:
-    Table* table;
-
+    vector<char *> mData;
 public:
     Data();
-    Data(char* pathOfFile);
+    Data(const Table& table);
     ~Data();
 };
 
 inline Data::Data() : Table() {
-    
+    mData.end();
+}
+
+Data::Data(const Table& table) : Table(table){
+    char * temp = getTable();
+    for (int i = 0; i < sizeof(temp); ++i) {
+
+    }
 }
 
 

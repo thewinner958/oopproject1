@@ -13,6 +13,8 @@ public:
 
     void setString(char *string);
 
+    friend String& operator=(const String& other);
+
 private:
     char *mString;
 

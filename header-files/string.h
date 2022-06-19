@@ -6,14 +6,12 @@
 class String {
 public:
     String();
-    String(char *string);
+    explicit String(char *string);
     ~String();
 
     char *getString() const;
 
     void setString(char *string);
-
-    friend String& operator=(const String& other);
 
 private:
     char *mString;

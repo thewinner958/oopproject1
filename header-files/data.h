@@ -51,16 +51,15 @@ Data::Data(const Table& table) : Table(table){
         }
         if (tempTable[i] == '\n') {
             mLines++;
-            if (mColumns == 0) mColumns = tempColumns;
-            else if (mColumns != 0 && tempColumns > mColumns) {
-                mColumns = tempColumns;
-            } else mColumns = mColumns;
+            mColumns = tempColumns;
             tempColumns = 0;
             temp = nullptr;
             continue;
         }
         temp += tempTable[i];
     }
+
+    delete tempTable;
 }
 
 
